@@ -1,5 +1,12 @@
 import React from 'react'
-import Event from './Event'
+// import Event from './Event'
+import { useQuery, gql } from "@apollo/client";
+
+const Events = gql`
+  query getAllEvents{
+    
+  }
+`
 
 function EventList({events}) {
   return (

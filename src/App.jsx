@@ -1,5 +1,7 @@
 import EventList from "./Components/EventList"
 import NavBar from "./Components/NavBar";
+import { client } from "./ApolloClient/client";
+import { ApolloProvider } from "@apollo/client";
 
 const events = [
   {
@@ -39,13 +41,15 @@ const events = [
 
 function App() {
   return (
-    <div className="bg-gray-50 h-screen">
-      <NavBar />
-      <div className="mt-16 pt-4 px-4">
-        <h1 className="text-3xl font-semibold my-3">Upcoming events</h1>
-        <EventList events={events} />
+    <ApolloProvider client={client}>
+      <div className="bg-gray-50 h-screen">
+        <NavBar />
+        <div className="mt-16 pt-4 px-4">
+          <h1 className="text-3xl font-semibold my-3">Upcoming events</h1>
+          <EventList events={events} />
+        </div>
       </div>
-    </div>
+    </ApolloProvider>
   );
 }
 

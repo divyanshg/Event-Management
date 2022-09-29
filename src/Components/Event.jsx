@@ -23,7 +23,7 @@ function Event({event}) {
             </p>
           </div>
         </div>
-        <div clasName="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center">
           <p className="text-sm text-gray-600">Entry Fee</p>
           <p className="text-xl text-blue-600 font-semibold">
             ₹{event.entryFee}
